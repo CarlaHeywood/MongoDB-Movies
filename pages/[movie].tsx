@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 function Movie() {
   const router = useRouter();
   const { movie } = router.query;
-  const [movieData, setMovieData] = useState<Movie | null>(null);
-  const decodedMovie = movie ? JSON.parse(decodeURIComponent(movie)) : null;
+  // const [movieData, setMovieData] = useState<Movie | null>(null);
+  // const decodedMovie = movie ? JSON.parse(decodeURIComponent(movie)) : null;
 
   // useEffect(() => {
   //   // Fetch the movie data using the `movie` slug
@@ -23,17 +23,22 @@ function Movie() {
 
   // Render the movie details once the data is fetched
   return (
-    <Layout title={decodedMovie?.title ?? "Movie"}>
-      {decodedMovie ? (
-        <div className="text-white h-screen">
-          <h1>{decodedMovie.title}</h1>
-          <p>Year: {decodedMovie.year}</p>
-          {/* Render other movie details */}
-        </div>
-      ) : (
-        <div>Loading...</div>
-      )}
+    <Layout title="Movie">
+      <div>
+        Here is a movie
+      </div>
     </Layout>
+    // <Layout title={decodedMovie?.title ?? "Movie"}>
+    //   {decodedMovie ? (
+    //     <div className="text-white h-screen">
+    //       <h1>{decodedMovie.title}</h1>
+    //       <p>Year: {decodedMovie.year}</p>
+    //       {/* Render other movie details */}
+    //     </div>
+    //   ) : (
+    //     <div>Loading...</div>
+    //   )}
+    // </Layout>
   );
 }
 
